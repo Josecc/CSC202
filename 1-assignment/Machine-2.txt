@@ -1,0 +1,10 @@
+FoodInformation: {name:Vose,nutrition:|  Serving Size- 1 bottle  |  Total Fat- 0g  |  Sugar- 0g  |,price:2.0,quantity:20}
+FoodInformation: {name:Vose,nutrition:|  Serving Size- 1 bottle  |  Total Fat- 0g  |  Sugar- 0g  |,price:2.0,quantity:20}
+FoodInformation: {name:Cheetoes,nutrition:|  Serving Size- 1 bag  |  Total Fat- 3g  |  Sugar- 9g  |,price:1.5,quantity:20}
+FoodInformation: {name:M&Ms,nutrition:|  Serving Size- 1 bag  |  Total Fat- 5g  |  Sugar- 22g  |,price:1.25,quantity:20}
+FoodInformation: {name:M&Ms,nutrition:|  Serving Size- 1 bag  |  Total Fat- 5g  |  Sugar- 22g  |,price:1.25,quantity:20}
+FoodInformation: {name:Orange Fanta,nutrition:|  Serving Size- 1 can  |  Total Fat- 0g  |  Sugar- 32g  |,price:1.75,quantity:20}
+FoodInformation: {name:5 Gum,nutrition:|  Serving Size- 1 piece  |  Total Fat- 0g  |  Sugar- 12g  |,price:0.75,quantity:20}
+FoodInformation: {name:5 Gum,nutrition:|  Serving Size- 1 piece  |  Total Fat- 0g  |  Sugar- 12g  |,price:0.75,quantity:20}
+FoodInformation: {name:Twix,nutrition:|  Serving Size- 1 bar  |  Total Fat- 3g  |  Sugar- 38g  |,price:1.5,quantity:20}
+FoodInformation: {name:Twix,nutrition:|  Serving Size- 1 bar  |  Total Fat- 3g  |  Sugar- 38g  |,price:1.5,quantity:20}

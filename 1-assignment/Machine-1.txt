@@ -1,0 +1,10 @@
+FoodInformation: {name:Skittles,nutrition:|  Serving Size- 20 pc  |  Total Fat- 1g  |  Sugar- 20g  |,price:1.25,quantity:20}
+FoodInformation: {name:Doritoes,nutrition:|  Serving Size- 1 bag  |  Total Fat- 2g  |  Sugar- 12g  |,price:1.5,quantity:19}
+FoodInformation: {name:Doritoes,nutrition:|  Serving Size- 1 bag  |  Total Fat- 2g  |  Sugar- 12g  |,price:1.5,quantity:19}
+FoodInformation: {name:M&Ms,nutrition:|  Serving Size- 1 bag  |  Total Fat- 5g  |  Sugar- 22g  |,price:1.25,quantity:12}
+FoodInformation: {name:M&Ms,nutrition:|  Serving Size- 1 bag  |  Total Fat- 5g  |  Sugar- 22g  |,price:1.25,quantity:18}
+FoodInformation: {name:Pretzles,nutrition:|  Serving Size- 1 bag  |  Total Fat- 0g  |  Sugar- 2g  |,price:1.5,quantity:18}
+FoodInformation: {name:Pretzles,nutrition:|  Serving Size- 1 bag  |  Total Fat- 0g  |  Sugar- 2g  |,price:1.5,quantity:16}
+FoodInformation: {name:5 Gum,nutrition:|  Serving Size- 1 piece  |  Total Fat- 0g  |  Sugar- 12g  |,price:0.75,quantity:18}
+FoodInformation: {name:Twix,nutrition:|  Serving Size- 1 bar  |  Total Fat- 3g  |  Sugar- 38g  |,price:1.5,quantity:16}
+FoodInformation: {name:Twix,nutrition:|  Serving Size- 1 bar  |  Total Fat- 3g  |  Sugar- 38g  |,price:1.5,quantity:19}
