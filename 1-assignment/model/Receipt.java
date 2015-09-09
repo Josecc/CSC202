@@ -13,6 +13,10 @@ public class Receipt {
 			throw new Exception("Not enough money.");
 	}
 
+	public FoodInformation getFood() {
+		return purchased;
+	}
+
 	public double getChange() {
 		return change;
 	}

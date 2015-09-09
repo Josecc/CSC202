@@ -64,18 +64,24 @@ public class VendingMachine {
 
 	}
 
-	public boolean buy(double money, int slotNumber) throws Exception{
+	public boolean buy(double money, int slotNumber, int arrivalTime) throws Exception{
 		if (slotNumber < 0 || slotNumber > 10)
 			throw new Exception("Number ouside of slot range.");
 		else {
 			try{
-				Receipt result = new Receipt( money , slots[slotNumber].fetch(1));
-				receipts.add( result );
-				System.out.println(result);
-				return true;
+				if(Arrays.asList(offHours).contains(offHours[0])){
+					System.out.println("Its currently: " + arrivalTime + "\nSorry, machine is closed from " + offHours[0] + " to " + offHours[2]);
+					return true;
+				}
+				else {
+					Receipt result = new Receipt( money , slots[slotNumber].fetch(1));
+					receipts.add( result );
+					System.out.println(result);
+					return true;
+				}
 			}
 			catch(Exception e){
-				System.out.println("not enough money!");
+				System.out.println(e);
 				return false;
 			}
 		}
@@ -100,7 +106,31 @@ public class VendingMachine {
 
             // Always close files.
             bufferedWriter.close();
-            return true;
+
+	        fileName = "Machine-"+number+"-totals-" + new java.util.Date() + ".txt";
+
+	        try {
+	            // Assume default encoding.
+	            fileWriter = new FileWriter(fileName);
+
+	            // Always wrap FileWriter in BufferedWriter.
+	            bufferedWriter = new BufferedWriter(fileWriter);
+	            double salesTotal = 0;
+	            for (Receipt receiptItem : receipts) {
+	            	salesTotal = salesTotal + receiptItem.getFood().getPrice();
+				}
+				bufferedWriter.write("Total: $" + String.format("%.2f", salesTotal));
+
+	            // Always close files.
+	            bufferedWriter.close();
+	            return true;
+	        }
+	        catch(IOException ex) {
+	            System.out.println(
+	                "Error writing to file '"
+	                + fileName + "'");
+	            return false;
+	        }
         }
         catch(IOException ex) {
             System.out.println(
@@ -108,6 +138,7 @@ public class VendingMachine {
                 + fileName + "'");
             return false;
         }
+
 	}
 
 	public int[] getOffHours() {

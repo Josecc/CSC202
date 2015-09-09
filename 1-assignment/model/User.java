@@ -21,6 +21,10 @@ public class User {
 		return this.wallet;
 	}
 
+	public int getArrivalTime() {
+		return arrivalTime;
+	}
+
 	public String toString() {
 		return "The client arrived at " + arrivalTime + "H (in 24 hour time), and has $" + String.format("%.2f", wallet) + " left.";
 	}

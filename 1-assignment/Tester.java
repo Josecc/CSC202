@@ -27,9 +27,17 @@ public class Tester {
 	    for (int i = 0; i < randomNum; i++) {
 	    	//create a random number for arrival time
 			Random ran = new Random();
-		    int slotNumber = ran.nextInt(10) + 1;
+			Random ranMachine = new Random();
+		    int slotNumber = ran.nextInt(10);
 	    	try {
-				machineOne.buy(clients[i].getWallet(), slotNumber);
+				if ((ranMachine.nextInt(10) + 1) > 5){
+					System.out.println("Arrived to macine one.");
+					machineOne.buy(clients[i].getWallet(), slotNumber, clients[i].getArrivalTime());
+				}
+				else{
+					System.out.println("Arrived to macine two.");
+					machineTwo.buy(clients[i].getWallet(), slotNumber, clients[i].getArrivalTime());
+				}
 			} catch(Exception e) {
 				System.out.println("Not enough money!");
 			}
