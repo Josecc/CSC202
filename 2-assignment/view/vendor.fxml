@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#loadFromBinary" text="Load from binary" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadFromExcel" text="Load from Excel" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveToBinary" text="Save to binary" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveToExcel" text="Save to Excel" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showAddItem" text="Add Food Item" />
+                  <MenuItem mnemonicParsing="false" onAction="#showAddCategory" text="Add Food Category" />
+                  <MenuItem mnemonicParsing="false" onAction="#editNode" text="Edit" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#deleteNode" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-text-alignment: right;" text="Search">
+               <graphic>
+                  <TextField fx:id="searchQuery" alignment="TOP_RIGHT" onAction="#searchEnter" promptText="Food Item">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </graphic>
+          </Menu>
+            <Menu mnemonicParsing="false" style="-fx-text-alignment: right;" />
+        </menus>
+      </MenuBar>
+      <Pane fx:id="categoryPanel" layoutY="259.0" prefHeight="141.0" prefWidth="600.0" visible="false">
+         <children>
+            <Rectangle fill="#25c376" height="141.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="45.54" radius="10.885" width="0.0" />
+               </effect>
+            </Rectangle>
+            <Separator layoutX="60.0" layoutY="40.0" prefHeight="5.0" prefWidth="481.0" />
+            <Text fill="#e8e8e8" layoutX="198.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW FOOD CATEGORY" textAlignment="CENTER">
+               <font>
+                  <Font name="Chalkduster" size="16.0" />
+               </font>
+            </Text>
+            <GridPane layoutX="60.0" layoutY="61.0" prefHeight="25.0" prefWidth="481.0">
+               <children>
+                  <Label text="Name:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="categoryName" onAction="#addCategory" prefHeight="19.0" prefWidth="382.0" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="1.0" top="1.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="116.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="365.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane layoutX="60.0" layoutY="95.0" prefHeight="25.0" prefWidth="481.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addCategory" text="ADD" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane fx:id="itemPanel" layoutY="200.0" prefHeight="200.0" prefWidth="600.0" visible="false">
+         <children>
+            <Rectangle fill="#25c376" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="45.54" radius="10.885" width="0.0" />
+               </effect>
+            </Rectangle>
+            <Separator layoutX="60.0" layoutY="40.0" prefHeight="5.0" prefWidth="481.0" />
+            <Text fill="#e8e8e8" layoutX="227.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW FOOD ITEM" textAlignment="CENTER">
+               <font>
+                  <Font name="Chalkduster" size="16.0" />
+               </font>
+            </Text>
+            <GridPane layoutX="60.0" layoutY="45.0" prefHeight="110.0" prefWidth="481.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="116.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="365.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Name:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Price:" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Quantity:" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Description:" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="itemName" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="1.0" top="1.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="itemPrice" onKeyTyped="#checkPrice" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="1.0" top="1.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="itemQuantity" onKeyTyped="#checkQuantity" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="1.0" top="1.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="itemDescription" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets bottom="1.0" top="1.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="60.0" layoutY="162.0" prefHeight="25.0" prefWidth="481.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="specialOrder" mnemonicParsing="false" text="Special Order" />
+                  <ChoiceBox fx:id="category" prefWidth="150.0" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#addItem" text="ADD" textAlignment="CENTER" textFill="#3d453f" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <TreeView fx:id="treeView" focusTraversable="false" layoutY="33.0" prefHeight="370.0" prefWidth="600.0" />
+      <ProgressBar fx:id="progressBar" focusTraversable="false" layoutX="394.0" layoutY="376.0" prefWidth="200.0" progress="0.0" visible="false" />
+   </children>
+</Pane>
