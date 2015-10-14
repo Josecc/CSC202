@@ -259,3 +259,156 @@ Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/
 	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
 	at org.eclipse.jgit.api.LsRemoteCommand.execute(LsRemoteCommand.java:202)
 	... 4 more
+
+!ENTRY org.eclipse.egit.core 4 0 2015-10-13 19:56:07.077
+!MESSAGE An exception occurred during push on URI http://github.com/Josecc/CSC202.git: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-10-13 19:56:16.139
+!MESSAGE http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:139)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:263)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:97)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:128)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:140)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.runInWorkspace(PullOperationUI.java:115)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1138)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:130)
+	... 8 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-10-13 19:56:34.452
+!MESSAGE http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 1
+org.eclipse.core.runtime.CoreException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:106)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:139)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:134)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	... 3 more
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1138)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:130)
+	... 5 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-10-13 19:56:34.453
+!MESSAGE http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:139)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:134)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1138)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:130)
+	... 5 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-10-13 19:56:34.455
+!MESSAGE http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 1
+org.eclipse.core.runtime.CoreException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:106)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:139)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:134)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	... 3 more
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1138)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:130)
+	... 5 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-10-13 19:56:34.456
+!MESSAGE http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:139)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:134)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:296)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1138)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:130)
+	... 5 more
+
+!ENTRY org.eclipse.egit.core 4 0 2015-10-13 20:29:01.147
+!MESSAGE An exception occurred during push on URI http://github.com/Josecc/CSC202.git: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
+
+!ENTRY org.eclipse.egit.core 4 0 2015-10-13 20:29:47.774
+!MESSAGE An exception occurred during push on URI http://github.com/Josecc/CSC202.git: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: http://github.com/Josecc/CSC202.git: 301 Moved Permanently
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:510)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
