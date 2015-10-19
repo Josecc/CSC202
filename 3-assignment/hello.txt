@@ -1,0 +1,4 @@
+Start of Project 3:
+-> Make model
+-> Find out shapes of cars & traffic light
+-> Make GUI
