@@ -28,10 +28,14 @@ public class FoodCategoryNode {
 	}
 
 	public String toString(){
-		return //String of stuffff
+		return category
 	}
 
 	public FoodCategoryNode getNext() {
 		return this.next;
+	}
+
+	public FoodCategoryNode getFoodItems() {
+		return foodItems;
 	}
 }

@@ -6,8 +6,9 @@ package model;
 
 public class FoodItemLinkedList {
 	private FoodNode head;
+	private FoodItem data;
 
-	public FoodItemLinkedList(FoodNode head){
+	public FoodItemLinkedList(FoodNode item){
 		this.head = head;
 	}
 
@@ -16,19 +17,40 @@ public class FoodItemLinkedList {
 	}
 
 	public void add(FoodItem food) {
-		FoodNode item = new FoodNode(food);
-		if(this.head = null)
-			this.head = item;
-		else
-			setNext(item, head);
+		FoodNode toAdd = new FoodNode(food);
+		FoodNode current = head;
+
+		while(current.getNext()!= null) {
+			current = current.getNext();
+		}
+
+		current.setNext(toAdd);
 	}
 
 	public void delete(int index) {
-		//traverse through & finde the index
+		if (index < 1 || index > size())
+			return false
+
+		FoodNode current = head;
+		for (int i = 1; i < index; i++) {
+			if (current.getNext() == null)
+				return false;
+			current = current.getNext();
+		}
+		current.setNext(current.getNext().getNext());
+		return true;
 	}
 
 	public FoodItem search(String name) {
-		//Return FoodItem
+		if (name = null)
+            return null;
+        FoodNode current = head.getNext();
+        while (! (current.getItem().getName)) {
+        	if(curent.getNext() == null)
+        		return null;
+        	current = current.getNext();
+        }
+        return current;
 	}
 
 	public String toString() {

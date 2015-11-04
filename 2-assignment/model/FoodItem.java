@@ -57,7 +57,7 @@ public class FoodItem {
 	* ToString default method
 	*/
 	public String toString() {
-		return "---\nName: " + this.name + "\nPrice: " + this.price + "\nQuantity: " + this.quantity + "\nDescription: " + this.descripion + "\nSpecial Order: " + this.specialOrder + "\n---";
+		return "Name: " + this.name + " | Price: " + this.price + " | Quantity: " + this.quantity + " | Description: " + this.descripion + " | Special Order: " + this.specialOrder;
 	}
 
 }

@@ -1,4 +1,19 @@
-Start of Project 3:
--> Make model
--> Find out shapes of cars & traffic light
--> Make GUI
+UML Diagram	5
+Interfaces	2
+Exceptions	 
+Test Cases:	 
+Dequeue from empty queue	2
+Generic	2
+Car object	2
+Use LinkedList to create the queue	5
+Use random to determine car arrival	5
+Logic to determine the minimum waiting time (Traffic Light)
+or determine the proper lane to dequeue (stop sign)	10
+Demonstrate concurency (Threads)	10
+Synchronization (Handle Interference)	2
+Logic to handle the processor time to real time	5
+Main driver/Simulator shows the number of cars in each lane and waiting time (real time)	50
+Extra Credits:	 
+Left turn and right turn (10%)	 
+GUI / moving car (20%)	 
+Total	100

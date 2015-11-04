@@ -16,24 +16,61 @@ public class FoodCategoryLinkedList {
 	}
 
 	public void add(FoodCategoryNode toAdd){
-		if(this.head = null)
-			this.head = toAdd;
-		else
-			setNext(toAdd, this.head);
+		FoodCategoryNode current = head;
+
+		while(current.getNext()!= null) {
+			current = current.getNext();
+		}
+
+		current.setNext(toAdd);
 	}
 
 	public void add(String category, FoodItemLinkedList items){
 		FoodCategoryNode toAdd = new FoodCategoryNode(category, items);
-		this(toAdd);
+		FoodCategoryNode current = head;
+
+		while(current.getNext()!= null) {
+			current = current.getNext();
+		}
+
+		current.setNext(toAdd);
 	}
 
 	public void add(String category){
 		FoodCategoryNode toAdd = new FoodCategoryNode(category);
-		this(toAdd);
+		FoodCategoryNode current = head;
+
+		while(current.getNext()!= null) {
+			current = current.getNext();
+		}
+
+		current.setNext(toAdd);
 	}
 
-	public boolean delete(String category){
-		//search and delete node
+	public FoodCategoryNode get(int index) {
+		if (index <= 0)
+            return null;
+        FoodCategoryNode current = head.getNext();
+        for (int i = 1; i < index; i++) {
+        	if(curent.getNext() == null)
+        		return null;
+        	current = current.getNext();
+        }
+        return current;
+	}
+
+	public boolean delete(int index){
+		if (index < 1 || index > size())
+			return false
+
+		FoodCategoryNode current = head;
+		for (int i = 1; i < index; i++) {
+			if (current.getNext() == null)
+				return false;
+			current = current.getNext();
+		}
+		current.setNext(current.getNext().getNext());
+		return true;
 	}
 
 	/*
