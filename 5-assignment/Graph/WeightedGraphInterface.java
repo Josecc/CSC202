@@ -1,3 +1,5 @@
+import java.util.*;
+
 public interface WeightedGraphInterface<T>
 {
   boolean isEmpty();
@@ -13,17 +15,14 @@ public interface WeightedGraphInterface<T>
   //
   // Adds vertex to this graph.
 
-  boolean hasVertex(T vertex);
-  // Returns true if this graph contains vertex; otherwise, returns false.
-
   void addEdge(T fromVertex, T toVertex, int weight);
   // Adds an edge with the specified weight from fromVertex to toVertex.
 
   int weightIs(T fromVertex, T toVertex);
   // If edge from fromVertex to toVertex exists, returns the weight of edge;
-  // otherwise, returns a special “null-edge” value.
+  // otherwise, returns a special "null-edge" value.
 
-  UnboundedQueueInterface<T> getToVertices(T vertex);
+  Queue<T> getToVertices(T vertex);
   // Returns a queue of the vertices that are adjacent from vertex.
 
   void clearMarks();
@@ -34,8 +33,5 @@ public interface WeightedGraphInterface<T>
 
   boolean isMarked(T vertex);
   // Returns true if vertex is marked; otherwise, returns false.
-  
-  T getUnmarked();
-  // Returns an unmarked vertex if any exist; otherwise, returns null.
   
 }

@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class WeightedGraph<T> implements WeightedGraphInterface<T>
 {
   public static final int NULL_EDGE = 0;
@@ -29,13 +31,17 @@ public class WeightedGraph<T> implements WeightedGraphInterface<T>
   }
 
   public boolean isEmpty()
-  // Returns true if this graph is empty; otherwise, returns false.
   {
+    if(numVertices == 0)
+      return true;
+    return false;
   }
 
   public boolean isFull()
-  // Returns true if this graph is full; otherwise, returns false.
   {
+    if(numVertices == maxVertices)
+      return true;
+    return false;
   }
 
   public void addVertex(T vertex)
@@ -52,11 +58,6 @@ public class WeightedGraph<T> implements WeightedGraphInterface<T>
       edges[index][numVertices] = NULL_EDGE;
     }
     numVertices++;
-  }
-
-  public boolean hasVertex(T vertex)
-  // Returns true if this graph contains vertex; otherwise, returns false.
-  {
   }
   
   private int indexIs(T vertex)
@@ -81,7 +82,7 @@ public class WeightedGraph<T> implements WeightedGraphInterface<T>
 
   public int weightIs(T fromVertex, T toVertex)
   // If edge from fromVertex to toVertex exists, returns the weight of edge;
-  // otherwise, returns a special “null-edge” value.
+  // otherwise, returns a special "null-edge" value.
   {
     int row;
     int column;
@@ -91,36 +92,103 @@ public class WeightedGraph<T> implements WeightedGraphInterface<T>
     return edges[row][column];
   }
 
-  public UnboundedQueueInterface<T> getToVertices(T vertex)
+  public Queue<T> getToVertices(T vertex)
   // Returns a queue of the vertices that are adjacent from vertex.
   {
-    UnboundedQueueInterface<T> adjVertices = new LinkedUnbndQueue<T>();
-    int fromIndex;
-    int toIndex;
-    fromIndex = indexIs(vertex);
-    for (toIndex = 0; toIndex < numVertices; toIndex++)
-      if (edges[fromIndex][toIndex] != NULL_EDGE)
-        adjVertices.enqueue(vertices[toIndex]);
-    return adjVertices;
-  }
-
-  public void clearMarks()
-  // Sets marks for all vertices to false.
-  {
+      Queue<T> adjVertices = new LinkedList<>();
+      int fromIndex;
+      int toIndex;
+      fromIndex = indexIs(vertex);
+      for (toIndex = 0; toIndex < numVertices; toIndex++)
+          if (edges[fromIndex][toIndex] != NULL_EDGE)
+              adjVertices.add(vertices[toIndex]);
+      return adjVertices;
   }
 
   public void markVertex(T vertex)
   // Sets mark for vertex to true.
   {
+      int index;
+      index = indexIs(vertex);
+      marks[index] = true;
   }
 
-  public boolean isMarked(T vertex)
-  // Returns true if vertex is marked; otherwise, returns false.
-  {
+  public boolean isMarked(T vertex) {
+      int index;
+      index = indexIs(vertex);
+      return (marks[index]);
   }
-  
-  public T getUnmarked()
-  // Returns an unmarked vertex if any exist; otherwise, returns null.
-  {
+
+  public void clearMarks() {
+      for (int i = 0; i < this.numVertices; i++) {
+          marks[i] = false;
+      }
+  }
+
+  public static boolean isPath(WeightedGraph<String> graph, String startVertex, String endVertex) {
+      Deque<String> stack = new ArrayDeque<String>();
+      Queue<String> vertexQueue = new LinkedList<String>();
+
+      boolean found = false;
+      String vertex;
+      String item;
+      graph.clearMarks();
+      stack.push(startVertex);
+      do {
+          vertex = stack.peek();
+          stack.pop();
+          if (vertex == endVertex)
+              found = true;
+          else {
+              if (!graph.isMarked(vertex)) {
+                  graph.markVertex(vertex);
+                  vertexQueue = graph.getToVertices(vertex);
+
+                  while (!vertexQueue.isEmpty()) {
+                      item = vertexQueue.poll();
+                      if (!graph.isMarked(item))
+                          stack.push(item);
+                  }
+              }
+          }
+      } while (!stack.isEmpty() && !found);
+      return found;
+  }
+
+  public static void shortestPaths(WeightedGraph<String> graph, String startVertex){
+      Flight flight;
+      Flight saveFlight;         // for saving on priority queue
+      int minDistance;
+      int newDistance;
+
+      PriorityQueue<Flight> pq = new PriorityQueue<Flight>(20);   // Assume at most 20 vertices
+      String vertex;
+      Queue<String> vertexQueue = new LinkedList<>();
+
+      graph.clearMarks();
+      saveFlight = new Flight(startVertex, startVertex, 0);
+      pq.add(saveFlight);
+
+      System.out.println("Last Vertex   Destination   Distance");
+      System.out.println("------------------------------------");
+      do {
+          flight = pq.remove();
+          if (!graph.isMarked(flight.getToVertex())) {
+              graph.markVertex(flight.getToVertex());
+              System.out.println(flight);
+              flight.setFromVertex(flight.getToVertex());
+              minDistance = flight.getDistance();
+              vertexQueue = graph.getToVertices(flight.getFromVertex());
+              while (!vertexQueue.isEmpty()) {
+                  vertex = vertexQueue.poll();
+                  if (!graph.isMarked(vertex)) {
+                      newDistance = minDistance
+                              + graph.weightIs(flight.getFromVertex(), vertex);
+                      saveFlight = new Flight(flight.getFromVertex(), vertex, newDistance);
+                      pq.add(saveFlight);
+                  }
+              }
+          }
+      } while (!pq.isEmpty());
   }
 }
