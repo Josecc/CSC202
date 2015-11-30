@@ -1,25 +1,25 @@
 
 ##Implement Priority Queue
  
--isEmpty	5
--isFull	5
--enqueue	10
--dequeue	10
--Reheap	10
--Exceptions	5
--Create a test driver class for Priority Queue and program contains no errors. UML and JAVADOC	5
+- isEmpty	5
+- isFull	5
+- enqueue	10
+- dequeue	10
+- Reheap	10
+- Exceptions	5
+- Create a test driver class for Priority Queue and program contains no errors. UML and JAVADOC	5
  	 
 ##Graph	 
--Implement Graph Interface	5
--addVertex method	5
--hasVertex method	5
--addEdge method	5
--weightIs method	5
--getToVertices method	5
--Implement Vertex Class: A node in a graph	5
--Implement Weighted Graph	5
--Use DFS or BFS	5
--Create a test driver class for Graph and program contains no errors. UML and JAVADOC.	5
+- Implement Graph Interface	5
+- addVertex method	5
+- hasVertex method	5
+- addEdge method	5
+- weightIs method	5
+- getToVertices method	5
+- Implement Vertex Class: A node in a graph	5
+- Implement Weighted Graph	5
+- Use DFS or BFS	5
+- Create a test driver class for Graph and program contains no errors. UML and JAVADOC.	5
  	 
 #Total	100
  	 
