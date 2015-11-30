@@ -49,7 +49,6 @@ public class Driver {
 				Food myFood = new Food(name, ingredients);
 				food.add(myFood);
 				System.out.println(food.size());
-				food.reset(2);
 			}
 			read = true;
 		} else if ( MoralSupport.menu(new String[] {"Lose modified data & re-read","Keep modified data and don't read"}) == 1){
@@ -69,7 +68,7 @@ public class Driver {
 				Food myFood = new Food(name, ingredients);
 				food.add(myFood);
 				System.out.println(food.size());
-				food.reset(2);
+				food.reset(3);
 			}
 		}
 	}
@@ -112,15 +111,15 @@ public class Driver {
 		}
 		Food myFood = null;	
 		try{
-			food.reset(1);
-			myFood = food.getNext(1);
+			food.reset(3);
+			myFood = food.getNext(3);
 		}catch ( Exception e){
 			
 		}
 		while(myFood != null){
 			writer.println(myFood.write());
 			try{
-				myFood = food.getNext(1);
+				myFood = food.getNext(3);
 			} catch (Exception e){
 				myFood = null;
 				writer.close();

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * 
- * Modified by: Jose Canahui
+ * Authored by: Jose Canahui
  * for: returning a string.
  * && added capabilities for user-friendly FileIO, creating menus and getting responses, querying for strings & ints..
  *
@@ -16,33 +16,33 @@ public class MoralSupport // class that can be used to print one line of formatt
 {
 	private static Scanner keyboard = new Scanner(System.in);
 	
-	public static String printStringLeft(int size, String formatted)
-// Blank fills and left justifies a string in a field of size characters
-	{
-		String output = "";
-		int length = formatted.length();
-		output = formatted;
-		while(size > length)
-		{
-			output = output + " ";
-			size--;
-		} // End while (size > length)
-		return output;
-	} // End function printString
+// 	public static String printStringLeft(int size, String formatted)
+// // Blank fills and left justifies a string in a field of size characters
+// 	{
+// 		String output = "";
+// 		int length = formatted.length();
+// 		output = formatted;
+// 		while(size > length)
+// 		{
+// 			output = output + " ";
+// 			size--;
+// 		} // End while (size > length)
+// 		return output;
+// 	} // End function printString
 
-	public static String printStringRight(int size, String formatted)
-// Blank fills and right justifies a string in a field of size characters
-	{
-		String output = "";
-		int length = formatted.length();
-		while(size > length)
-		{
-			output = output + " ";
-			size--;
-		} // End while (size > length)
-		output = output + formatted;
-		return output;
-	} // End function printString
+// 	public static String printStringRight(int size, String formatted)
+// // Blank fills and right justifies a string in a field of size characters
+// 	{
+// 		String output = "";
+// 		int length = formatted.length();
+// 		while(size > length)
+// 		{
+// 			output = output + " ";
+// 			size--;
+// 		} // End while (size > length)
+// 		output = output + formatted;
+// 		return output;
+// 	} // End function printString
 	
 	/**
 	 * <b>Purpose:</b> Requests for user input, can be next() or nextLine() true | false<br>

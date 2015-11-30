@@ -5,16 +5,17 @@ public class BinarySearchTree<T extends Comparable<T>>
 
   boolean found;
   
-  // for traversals
-  protected LinkedUnbndQueue<T> inOrderQueue;    // queue of info
-  protected LinkedUnbndQueue<T> preOrderQueue;   // queue of info
-  protected LinkedUnbndQueue<T> postOrderQueue;  // queue of info
+  //Used for traversing the tree, make sure you reset THEN get. (and reset/get in the same #)
+  protected LinkedUnbndQueue<T> inOrderQueue;
+  protected LinkedUnbndQueue<T> preOrderQueue;
+  protected LinkedUnbndQueue<T> postOrderQueue; 
 
   public BinarySearchTree()
   {
     root = null;
   }
 
+  //returns if the tree is empty
   public boolean isEmpty()
   {
     return (root == null);
@@ -28,6 +29,7 @@ public class BinarySearchTree<T extends Comparable<T>>
       return recSize(tree.getLeft()) + recSize(tree.getRight()) + 1;
   }
 
+  //returns the size of the tree
   public int size()
   {
     return recSize(root);
@@ -67,6 +69,7 @@ public class BinarySearchTree<T extends Comparable<T>>
       return true;        // element is found
   }
 
+  //Returns if it has the element in the tree
   public boolean contains (T element)
   {
     return recContains(element, root);
@@ -183,6 +186,7 @@ public class BinarySearchTree<T extends Comparable<T>>
     }
   }
 
+  //Resets the tree, imperative before a 'get'
   public int reset(int orderType)
   {
     int numNodes = size();
